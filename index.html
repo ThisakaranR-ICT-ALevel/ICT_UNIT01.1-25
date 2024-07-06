@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Students' ICT Marks_2025</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #98AFC7;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            padding: 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
+        h1, h2 {
+            text-align: center;
+            color: #ff6347; /* Change header color to tomato */
+            font-family: 'Georgia', serif;
+        }
+        h1 {
+            font-size: 2.5em;
+        }
+        h2 {
+            font-size: 2em;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            background-color: #fff;
+            overflow-x: auto;
+            font-size: 1em;
+        }
+        th, td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 12px;
+        }
+        th {
+            background-color: #00827F;
+            color: white;
+            font-weight: bold;
+            color: #25383C;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        .excellent1 {
+            color: darkgreen;
+        }
+        .excellent2 {
+            color: #800080;
+        }
+        .excellent {
+            color: #008000;
+        }
+        .good {
+            color: blue;
+        }
+        .little {
+            color: lightblue;
+        }
+        .improve {
+            color: orange;
+        }
+        .poor {
+            color: red;
+        }
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .button {
+            background-color: #34282C;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px;
+        }
+        .button:hover {
+            background-color: #45a049;
+        }
+        .contact {
+            margin-top: 40px;
+            text-align: center;
+            padding: 20px;
+            background-color: #BCC6CC;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .contact p {
+            font-size: 1.2em;
+            color: #555;
+        }
+        .contact a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        .contact a:hover {
+            text-decoration: underline;
+        }
+        .icon {
+            margin-right: 10px;
+            color: #4CAF50;
+        }
+        @media (max-width: 768px) {
+            h1, h2 {
+                font-size: 2em;
+            }
+            th, td {
+                padding: 10px;
+                font-size: 14px; /* Adjust font size for smaller screens */
+            }
+            .button {
+                padding: 8px 16px;
+                font-size: 14px;
+            }
+            .contact p {
+                font-size: 1em;
+            }
+        }
+        @media (max-width: 480px) {
+            h1, h2 {
+                font-size: 1.5em;
+            }
+            th, td {
+                padding: 8px;
+                font-size: 12px; /* Further adjust font size for very small screens */
+            }
+            .button {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+            .contact p {
+                font-size: 0.9em;
+            }
+        }
+        @media (max-width: 350px) {
+            body {
+                margin: 10px;
+                padding: 10px;
+            }
+            h1, h2 {
+                font-size: 1.2em;
+            }
+            th, td {
+                padding: 6px;
+                font-size: 10px; /* Further adjust font size for very small screens */
+            }
+            .button {
+                padding: 4px 8px;
+                font-size: 10px;
+            }
+            .contact p {
+                font-size: 0.8em;
+            }
+        }
+        @media (max-width: 269px) {
+            body {
+                margin: 5px;
+                padding: 5px;
+            }
+            h1, h2 {
+                font-size: 1em;
+            }
+            th, td {
+                padding: 4px;
+                font-size: 8px; /* Further adjust font size for very small screens */
+            }
+            .button {
+                padding: 2px 4px;
+                font-size: 8px;
+            }
+            .contact p {
+                font-size: 0.7em;
+            }
+        }
+    </style>
+</head>
+<body id="content">
+    <div class="container">
+        <h1><u>Students' ICT Marks (ADC - 2025)</u></h1>
+        <div class="button-container">
+            <button class="button" onclick="showTopStudents()">
+                <i class="fas fa-trophy"></i> View Top Students
+            </button>
+            <button class="button" onclick="generatePDF()">
+                <i class="fas fa-file-pdf"></i> Download as PDF
+            </button>
+        </div>
+        <table id="marksTable">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Marks</th>
+                    <th>Grade</th>
+                    <th>Feedback</th>
+                    <th>Rank</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr style="background-color: #BCC6CC; border: 1px solid #333;">
+                    <td>V.Thuvaraga</td>
+                    <td>99</td>
+                    <td class="excellent2">A+</td>
+                    <td class="excellent2">Marvellous work(Re-create test)</td>
+                    <td>1</td>
+                </tr>
+                <tr style="background-color: #BCC6CC; border: 1px solid #333;">
+                    <td>S.Thilaxshana</td>
+                    <td>78</td>
+                    <td class="good">A+</td>
+                    <td class="good">Good</td>
+                    <td>1</td>
+                </tr>
+                <tr style="background-color: #BCC6CC; border: 1px solid #333;">
+                    <td>S.Milogithan</td>
+                    <td>62</td>
+                    <td class="improve">B-</td>
+                    <td class="improve">Have to improve</td>
+                    <td>2</td>
+                </tr>
+                <tr style="background-color: #BCC6CC; border: 1px solid #333;">
+                    <td>A.Kirishanth</td>
+                    <td>58.5</td>
+                    <td class="poor">C+</td>
+                    <td class="poor">Want to improve</td>
+                    <td>3</td>
+                </tr>
+                <tr>
+                    <td>N.Danushan</td>
+                    <td>55</td>
+                    <td class="poor">C+</td>
+                    <td class="poor">Want to improve</td>
+                    <td>5</td>
+                </tr>
+                <tr>
+                    <td>R.Ezhilvannan</td>
+                    <td>51</td>
+                    <td class="poor">C</td>
+                    <td class="poor">Want to improve</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>B.Brindhavakeshan</td>
+                    <td>51</td>
+                    <td class="poor">C</td>
+                    <td class="poor">Want to improve</td>
+                    <td>6</td>
+                </tr>
+                <tr>
+                    <td>T.Harishan</td>
+                    <td>51</td>
+                    <td class="poor">C</td>
+                    <td class="poor">Want to improve</td>
+                    <td>6</td>
+                </tr>            
+                <tr>
+                    <td>K.Kishan</td>
+                    <td>48</td>
+                    <td class="poor">C</td>
+                    <td class="poor">Want to improve</td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>T.Asvithan</td>
+                    <td>45.5</td>
+                    <td class="poor">C-</td>
+                    <td class="poor">Want to improve</td>
+                    <td>10</td>
+                </tr>
+
+            </tbody>
+        </table>
+        <div class="contact">
+            <h2>Contact Information</h2>
+        <p><i class="fas fa-user icon"></i><b>Thisakaran Rasalingam (BICT Hons in Software Eng. (UOK))</b></p>
+        <p><i class="fas fa-envelope icon"></i>Email: <a href="mailto:Thisakaranr.ict@gmail.com">Thisakaranr.ict@gmail.com</a></p>
+        <p><i class="fas fa-phone icon"></i>Phone: +94 76 830 7957</p>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script>
+        function showTopStudents() {
+            alert("Congratulations to the top students for this exam:\n1. S.Thilaxshana\n2. S.Milogithan\n3. A.Kirishanth");
+        }
+
+        async function generatePDF() {
+            const { jsPDF } = window.jspdf;
+            const doc = new jsPDF();
+
+            const elementHTML = document.getElementById('content');
+
+            // Highlight and add borders to top 3 rows
+            const rows = elementHTML.querySelectorAll('tr');
+            rows.forEach((row, index) => {
+                if (index <= 4) {
+                    row.style.backgroundColor = '#B3D9D9'; // Light yellow background
+                    row.style.border = '1px solid #333'; // Solid black border
+                }
+            });
+
+            const canvas = await html2canvas(elementHTML, { scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+
+            const imgWidth = 190; 
+            const pageHeight = 295; 
+            const imgHeight = canvas.height * imgWidth / canvas.width;
+            let heightLeft = imgHeight;
+            let position = 0;
+
+            doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+            heightLeft -= pageHeight;
+
+            while (heightLeft >= 0) {
+                position = heightLeft - imgHeight;
+                doc.addPage();
+                doc.addImage(imgData, 'PNG', 10, position, imgWidth, imgHeight);
+                heightLeft -= pageHeight;
+            }
+
+            doc.save('Unit_01_ict_marks-2025.pdf');
+
+            // Reset styles after PDF generation
+            rows.forEach((row, index) => {
+                row.style.backgroundColor = ''; // Reset background color
+                row.style.border = ''; // Reset border
+            });
+        }
+    </script>
+</body>
+</html>
